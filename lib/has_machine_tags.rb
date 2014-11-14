@@ -77,7 +77,7 @@ module HasMachineTags
     def add_new_tags
       new_tags = tag_list - (self.tags || []).map(&:name)
       new_tags.each do |t|
-        self.tags << Tag.find_or_initialize_by_name(t)
+        self.tags << Tag.find_or_initialize_by(name: t)
       end
     end
     #:startdoc:
