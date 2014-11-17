@@ -97,7 +97,7 @@ module HasMachineTags
         else
           sanitize_sql(["name = ?", name])
         end
-        find(:all, :conditions=>conditions)
+        where(conditions)
       end
       
       # Builds a machine tag string given namespace, predicate and value.
